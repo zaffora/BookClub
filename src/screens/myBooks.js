@@ -12,12 +12,15 @@ function Untitled2(props) {
       <View style={styles.materialButtonShare1Row}>
         <MaterialButtonShare1
           style={styles.materialButtonShare1}
+          onPress={() => this.props.navigation.navigate('find')}
         ></MaterialButtonShare1>
         <MaterialButtonShare3
           style={styles.materialButtonShare3}
+          onPress={() => this.props.navigation.navigate('myBooks')}
         ></MaterialButtonShare3>
         <MaterialButtonShare2
           style={styles.materialButtonShare2}
+          onPress={() => this.props.navigation.navigate('addBook')}
         ></MaterialButtonShare2>
       </View>
       <View style={styles.icon2Row}>

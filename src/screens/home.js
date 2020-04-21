@@ -9,6 +9,8 @@ function Untitled(props) {
       <Text style={styles.welcomeToBookClub}>Welcome to Book Club</Text>
       <MaterialButtonPurple
         style={styles.materialButtonPurple}
+        title="Enter"
+        onPress={() => this.props.navigation.navigate('myBooks')}
       ></MaterialButtonPurple>
     </View>
   );
@@ -46,4 +48,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Untitled;
+export default myBooks;
