@@ -5,6 +5,37 @@ import MaterialButtonShare3 from "../components/MaterialButtonShare3";
 import MaterialButtonShare2 from "../components/MaterialButtonShare2";
 import IoniconsIcon from "react-native-vector-icons/Ionicons";
 import EntypoIcon from "react-native-vector-icons/Entypo";
+import { View, Text, StyleSheet } from 'react-native';
+import ItemComponent from '../components/ItemComponent';
+import { db } from '../config';
+
+let itemsRef = db.ref('/items');
+
+export default class List extends Component {
+	state = {
+		items: []
+	};
+
+	componentDidMount() {
+		itemsRef.on('value', snapshot => {
+			let data = snapshot.val();
+			let items = Object.values(data);
+			this.setState({ items });
+		});
+	}
+
+	render() {
+		return (
+			<View style={styles.container}>
+				{this.state.items.length > 0 ? (
+					<ItemComponent items={this.state.items} />
+				) : (
+					<Text>No items</Text>
+				)}
+			</View>
+		);
+	}
+}
 
 function Untitled2(props) {
   return (
@@ -35,7 +66,9 @@ function Untitled2(props) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+		justifyContent: 'center',
+		backgroundColor: '#ebebeb'
   },
   materialButtonShare1: {
     width: 56,

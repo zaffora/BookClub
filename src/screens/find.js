@@ -15,10 +15,7 @@ import {
   TouchableOpacity
 } from "react-native";
 
-function Untitled1(props) {
-  return (
-    <View style={styles.container}>
-      export default class Source extends React.Component {
+export default class Source extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: "Book Listing",
@@ -88,6 +85,11 @@ function Untitled1(props) {
     )
   }
 }
+
+function Untitled1(props) {
+  return (
+    <View style={styles.container}>
+    
       <View style={styles.materialButtonShare1Row}>
       <MaterialButtonShare1
           style={styles.materialButtonShare1}
